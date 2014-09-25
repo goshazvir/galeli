@@ -3,11 +3,38 @@
 
 // Fonts
 // --------------------------------------------------
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800&subset=latin,cyrillic)
+
+=os
+	font-family: "Open Sans", sans-serif
+	font-weight: 400
+	font-style: normal
+
+=osl
+	font-family: "Open Sans", sans-serif
+	font-weight: 300
+	font-style: normal
+
+=osb
+	font-family: "Open Sans", sans-serif
+	font-weight: 700
+	font-style: normal
+
+=ossb
+	font-family: "Open Sans", sans-serif
+	font-weight: 600
+	font-style: normal
+
+=oseb
+	font-family: "Open Sans", sans-serif
+	font-weight: 800
+	font-style: normal
 
 // Variables & mixins & extend
 // --------------------------------------------------
-// $color-red: red
-// $color-blue: blue
+$default-transition-duration: 0.3s
+$gray: #999
+$color-blue: blue
 
 // etc
 
@@ -15,17 +42,236 @@
 // --------------------------------------------------
 body
 	font-size: 14px 
-	font-family: Arial, sans-serif 
+	+os
+	font-weight: 400 
 	line-height: 1.4
 
+a
+	cursor: pointer
+
+.out
+	position: relative
+.out-page
+	width: 1100px
+	margin: 0 auto
+	+r(w1180)
+		width: 100%
+
+.static-768
+	+r(w768)
+		position: static
 // Headings
 // --------------------------------------------------
 
 // Nav
 // --------------------------------------------------
+.nav-wrap
+	width: 270px
+	margin: 0 auto
+	text-align: center
+	+border-radius(7px)
+	position: relative
+	z-index: 100
+	+r(w768)
+		position: absolute
+		top: -37px
+		left: 50%
+		margin-left: -135px
+	&.is-active
+		background: url("../img/icons/nav-bg.png") 0 0 repeat
+		.nav
+			display: block
+	.nav-ico
+		+s(nav-ico)
+		position: absolute
+		top: 10px
+		left: 50%
+		margin-left: -16px
+		cursor: pointer
+		+transition(all linear 0.2s)
+		+nosel
+		&:hover
+			+transition(all linear 0.2s)
+			+opacity(0.6)
 
+.nav
+	display: none
+	& > .nav-ul
+		padding-top: 50px
+		margin: 0
+		& > .nav-item
+			margin-bottom: 10px
+			&:hover
+				.sub-nav
+					display: block
+			&.has-dropdown
+				margin-bottom: 0
+				.nav-link
+					margin-bottom: 10px
+			& > .nav-link
+				display: block
+				font-size: 20px
+				text-transform: uppercase
+				color: #FFF
+				&:hover
+					text-decoration: none
+					color: $gray
+
+.sub-nav
+	display: none
+	margin: 30px 0
+	position: relative
+	&:before, &:after
+		content: ""
+		position: absolute
+		+s(line)
+		left: 50%
+		margin-left: -98px
+	&:before
+		top: -16px
+	&:after
+		bottom: -16px
+	.sub-nav-link
+		display: block
+		font-size: 16px
+		text-transform: uppercase
+		color: #FFF
+		&:hover
+			text-decoration: none
+			color: $gray
 // Header
 // --------------------------------------------------
-
+.header
+	height: 30px
+	line-height: 30px
+	background: url("../img/line.jpg")
+	position: absolute
+	top: 0
+	left: 0
+	right: 0
+.lang
+	position: absolute
+	top: 0px
+	right: 40px
+	z-index: 100
+	+clr
+	+r(w768)
+		right: 12px
+	.lang-item
+		float: left
+		margin-left: 30px
+		position: relative
+		&:first-child
+			&:before
+				content: none
+		&:before
+			content: ""
+			+s(nav-line)
+			position: absolute
+			top: 10px
+			left: -16px
+		&:first-child
+			margin-left: 0
+	.lang-item-link
+		font-size: 12px
+		color: $gray
+		&.is-active
+			color: #fff 
 // Footer
 // --------------------------------------------------
+.footer
+	height: 30px
+	line-height: 30px
+	background: url("../img/line.jpg")
+	position: absolute
+	bottom: 0
+	left: 0
+	right: 0
+	.footer-in
+		color: #FFF
+		position: absolute
+		top: 5px
+		right: 40px
+		+clr
+		+r(w768)
+			right: 12px
+
+.social
+	float: left
+	+clr
+	.social-item
+		float: left
+		margin-left: 30px
+		&:first-child
+			margin-left: 0
+	.social-ico
+		display: block
+		+transition(all linear 0.2s)
+		&:hover
+			+transition(all linear 0.2s)
+			+opacity(0.6)
+
+.copy 
+	float: left
+	margin-left: 40px
+	font-size: 12px
+	line-height: 21px
+	color: $gray
+	a
+		font-size: 12px
+		color: $gray
+// Page
+// --------------------------------------------------
+.sidebar
+	padding-top: 30px
+	color: #FFF 
+.page
+	padding-top: 30px
+	color: #FFF
+
+.page-bg
+	margin-top: 29px
+	margin-bottom: 29px
+	background: url("../img/index-bg.jpg")
+	+cover
+	+r(w768)
+		position: relative
+	+r(w320)
+		min-height: 530px !important
+		+cover 
+		background-repeat-y: no-repeat
+		background: url("../img/index-bg-mobile.jpg")
+
+.fb
+	+s(fb)
+.xz
+	+s(xz)
+
+.autor
+	margin-bottom: 50px
+	+r(w768)
+		margin-bottom: 0
+		position: absolute
+		left: 30px
+		bottom: 50px
+	.autor-title
+		margin-bottom: 25px
+		font-size: 40px
+		line-height: 1.2 
+		text-align: center
+		position: relative
+		+osl
+		&:before
+			content: ""
+			position: absolute
+			bottom: -10px
+			left: 50%
+			margin-left: -98px
+			+s(line)
+		a
+			color: #FFF
+			+osl
+	.autor-note
+		font-size: 12px
+		text-align: center
+
