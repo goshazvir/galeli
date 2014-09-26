@@ -34,6 +34,7 @@
 // --------------------------------------------------
 $default-transition-duration: 0.3s
 $gray: #999
+$lgray: #c6c6c6
 $color-blue: blue
 
 // etc
@@ -67,6 +68,7 @@ a
 // --------------------------------------------------
 .nav-wrap
 	width: 270px
+	min-height: 100px
 	margin: 0 auto
 	text-align: center
 	+border-radius(7px)
@@ -133,6 +135,7 @@ a
 		bottom: -16px
 	.sub-nav-link
 		display: block
+		margin-bottom: 10px
 		font-size: 16px
 		text-transform: uppercase
 		color: #FFF
@@ -175,8 +178,13 @@ a
 	.lang-item-link
 		font-size: 12px
 		color: $gray
+		&:hover
+			text-decoration: none
+			color: $lgray
 		&.is-active
-			color: #fff 
+			color: #fff
+			&:hover
+				color: #fff
 // Footer
 // --------------------------------------------------
 .footer
@@ -217,17 +225,29 @@ a
 	font-size: 12px
 	line-height: 21px
 	color: $gray
+	&:hover
+		color: $lgray
 	a
 		font-size: 12px
 		color: $gray
+		&:hover
+			text-decoration: none
+			color: $lgray
 // Page
 // --------------------------------------------------
 .sidebar
 	padding-top: 30px
-	color: #FFF 
-.page
-	padding-top: 30px
 	color: #FFF
+	+r(w992)
+		margin: 0 auto
+		width: 270px
+.page
+	margin-top: 30px
+	margin-bottom: 30px
+	padding: 50px 30px
+	color: #FFF
+	background: url("../img/icons/nav-bg.png") 0 0 repeat
+	+border-radius(7px)
 
 .page-bg
 	margin-top: 29px
@@ -242,6 +262,58 @@ a
 		background-repeat-y: no-repeat
 		background: url("../img/index-bg-mobile.jpg")
 
+.article
+	margin-top: 40px
+	+clr
+	&:first-child
+		margin-top: 0
+	.article-media
+		width: 345px
+		height: 220px
+		margin-right: 20px
+		overflow: hidden
+		float: left
+		+r(w992)
+			float: none
+			margin: 0 auto 30px
+		+r(w560)
+			width: 90%
+			height: auto
+		img
+			max-width: 100%
+			+r(w560)
+				height: auto 
+	.article-descr
+		overflow: hidden
+		+r(w992)
+			margin: 0 auto
+			text-align: center
+	.article-top
+		margin-bottom: 20px
+		font-size: 18px
+		a
+			color: #FFF 
+		.article-top-title
+			margin-right: 20px
+			position: relative
+			&:before
+				content: ""
+				width: 2px
+				height: 20px
+				background: #FFF 
+				position: absolute
+				top: 2px
+				right: -10px
+		.article-top-year
+			color: #FFF
+	.article-meta
+		margin-bottom: 30px
+		font-size: 14px
+		+os
+		font-style: italic
+	.article-content
+		font-size: 14px
+
 .fb
 	+s(fb)
 .xz
@@ -249,11 +321,12 @@ a
 
 .autor
 	margin-bottom: 50px
-	+r(w768)
-		margin-bottom: 0
-		position: absolute
-		left: 30px
-		bottom: 50px
+	&.m-index
+		+r(w768)
+			margin-bottom: 0
+			position: absolute
+			left: 30px
+			bottom: 50px
 	.autor-title
 		margin-bottom: 25px
 		font-size: 40px
