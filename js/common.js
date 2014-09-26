@@ -17,5 +17,6 @@ head.ready(function() {
 
 	$('.js-nav').on('click', function() {
 	 $(".nav-wrap").toggleClass("is-active");
+	 $(".nav").slideToggle( "fast" );
 	});
 });
