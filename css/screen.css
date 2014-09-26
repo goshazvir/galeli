@@ -2119,6 +2119,9 @@ a { cursor: pointer; }
 .article:first-child { margin-top: 0; }
 .article .article-media { width: 345px; height: 220px; margin-right: 20px; overflow: hidden; float: left; }
 @media only screen and (max-width: 992px) { .article .article-media { float: none; margin: 0 auto 30px; } }
+@media only screen and (max-width: 560px) { .article .article-media { width: 90%; height: auto; } }
+.article .article-media img { max-width: 100%; }
+@media only screen and (max-width: 560px) { .article .article-media img { height: auto; } }
 .article .article-descr { overflow: hidden; }
 @media only screen and (max-width: 992px) { .article .article-descr { margin: 0 auto; text-align: center; } }
 .article .article-top { margin-bottom: 20px; font-size: 18px; }
