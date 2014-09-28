@@ -2173,6 +2173,7 @@ a { cursor: pointer; }
 .autor { margin-bottom: 50px; }
 @media only screen and (max-width: 768px) { .autor.m-index { margin-bottom: 0; position: absolute; left: 30px; bottom: 50px; } }
 .autor .autor-title { margin-bottom: 25px; font-size: 40px; line-height: 1.2; text-align: center; position: relative; font-family: "Open Sans", sans-serif; font-weight: 300; font-style: normal; }
+.autor .autor-title .autor-title-in { width: 100px; margin: 0 auto; }
 .autor .autor-title:before { content: ""; position: absolute; bottom: -10px; left: 50%; margin-left: -98px; background: url('../img/icons-sfbe42331b5.png') 0 -29px no-repeat; width: 195px; height: 1px; }
 .autor .autor-title a { color: white; font-family: "Open Sans", sans-serif; font-weight: 300; font-style: normal; }
 .autor .autor-note { font-size: 12px; text-align: center; }
