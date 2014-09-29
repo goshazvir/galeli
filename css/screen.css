@@ -2089,7 +2089,7 @@ a { cursor: pointer; }
 .lang .lang-item-link.is-active { color: white; }
 .lang .lang-item-link.is-active:hover { color: white; }
 
-.footer { height: 30px; line-height: 30px; background: url("../img/line.jpg"); position: absolute; bottom: 0; left: 0; right: 0; }
+.footer { height: 30px; line-height: 30px; background: url("../img/line.jpg"); position: fixed; bottom: 0; left: 0; right: 0; }
 .footer .footer-in { color: white; position: absolute; top: 5px; right: 40px; *zoom: 1; }
 .footer .footer-in:after { content: " "; display: table; clear: both; }
 @media only screen and (max-width: 768px) { .footer .footer-in { right: 12px; } }
